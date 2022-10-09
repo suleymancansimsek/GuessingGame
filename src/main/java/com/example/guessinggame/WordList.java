@@ -10,6 +10,11 @@ public class WordList {
         words.add("monkey");
         words.add("lion");
         words.add("tiger");
+        words.add("crocodile");
+        words.add("bee");
+      //  words.add("bear");
+       // words.add("rabbit");
+
     }
 
 }

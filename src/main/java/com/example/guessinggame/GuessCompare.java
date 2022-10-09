@@ -5,16 +5,27 @@ import java.util.List;
 
 public class GuessCompare {
 
+    static int correctLetterCounter=0;
 
-    public void compare(List<Character> playerGuesses){
-        RandomWordGenerator wordGenerator = new RandomWordGenerator();
-        String randomWord = wordGenerator.generateWord();
+    public int compare(String randomWord,List<Character> playerGuesses){
+
         for (int i = 0; i < randomWord.length(); i++) {
             if ( playerGuesses.contains(randomWord.charAt(i))){
-                System.out.println(randomWord);
-               System.out.print("work");
+                ++correctLetterCounter;
             }
         }
 
+        return correctLetterCounter;
     }
+
+    /*
+    public boolean getResult(String word, String playerGuess){
+        if (word.equals(playerGuess)){
+            return true;
+        }
+        return false;
+    }
+
+    */
+
 }
