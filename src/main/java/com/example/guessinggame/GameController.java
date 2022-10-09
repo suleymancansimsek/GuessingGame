@@ -23,14 +23,19 @@ public class GameController implements Initializable {
     @FXML
     private TextField textField;
 
-
+    GuessCompare guessCompare = new GuessCompare();
 
     @FXML
     protected void onGuessButtonClick() {
-        label.setText("Welcome to JavaFX Application!");
-        GuessCalculate.guess(WordList.words.get(0));
+        label.setText("lets see !!!");
         String word = textField.getText();
-        GuessCompare.compare(WordList.words.get(0),word);
+        List<Character> playerGuesses = new ArrayList<>();
+
+        for (int i = 0; i < word.length(); i++) {
+            playerGuesses.add(word.charAt(i));
+        }
+        guessCompare.compare(playerGuesses);
+       // GuessCompare.compare(WordList.words.get(0),word);
     }
 
 
