@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 
 
 import java.net.URL;
@@ -19,13 +18,13 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        WordList.setWords();
-        Collections.shuffle(WordList.words);
+        QuestionsList.setQuestions();
+        Collections.shuffle(QuestionsList.words);
     }
 
 
     @FXML
-    private Label label;
+    private Label label,hintLabel;
 
     @FXML
     private TextField textField;
@@ -33,6 +32,8 @@ public class GameController implements Initializable {
     private Button startButton;
 
     GuessCompare guessCompare = new GuessCompare();
+
+
 
     @FXML
     protected void onGuessButtonClick() {
@@ -53,15 +54,16 @@ public class GameController implements Initializable {
 
     @FXML
     protected void onStartButtonClick() {
-        System.out.println(WordList.words);
+        System.out.println(QuestionsList.words);
         startButton.setText("next word");
+        hintLabel.setText("here is your hint");
        // for (int i=0; i<WordList.words.size(); i++ ){}
-        tempWord = WordList.words.get(i);
+        tempWord = QuestionsList.words.get(i);
 
         //tempWord = wordGenerator.generateWord();
         label.setText("your word have " +  tempWord.length() + " letters");
         System.out.println(tempWord);
-        if (i+1 == WordList.words.size()){
+        if (i+1 == QuestionsList.words.size()){
             i=0;
         }
         i++;

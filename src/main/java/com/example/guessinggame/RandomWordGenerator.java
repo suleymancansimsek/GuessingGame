@@ -1,6 +1,5 @@
 package com.example.guessinggame;
 
-import java.util.Collections;
 import java.util.Random;
 
 public class RandomWordGenerator {
@@ -9,7 +8,7 @@ public class RandomWordGenerator {
 
     public  String generateWord(int i){
 
-        String word = WordList.words.get(i);
+        String word = QuestionsList.words.get(i);
 
  /*
         int randomWordIndex = random.nextInt(WordList.words.size());

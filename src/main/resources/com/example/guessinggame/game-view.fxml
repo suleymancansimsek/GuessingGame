@@ -8,6 +8,11 @@
    <children>
       <VBox layoutX="116.0" layoutY="79.0" prefHeight="181.0" prefWidth="297.0">
          <children>
+            <Label fx:id="hintLabel" prefHeight="38.0" prefWidth="257.0" textFill="RED">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
             <Label fx:id="label" prefHeight="25.0" prefWidth="228.0" text="you are gonna make it!" />
             <TextField fx:id="textField">
                <VBox.margin>
