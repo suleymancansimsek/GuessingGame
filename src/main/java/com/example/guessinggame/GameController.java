@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+
 import java.net.URL;
 import java.util.*;
 
@@ -22,6 +23,7 @@ public class GameController implements Initializable {
         Collections.shuffle(WordList.words);
     }
 
+
     @FXML
     private Label label;
 
@@ -31,7 +33,6 @@ public class GameController implements Initializable {
     private Button startButton;
 
     GuessCompare guessCompare = new GuessCompare();
-    RandomWordGenerator wordGenerator = new RandomWordGenerator();
 
     @FXML
     protected void onGuessButtonClick() {
