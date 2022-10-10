@@ -8,19 +8,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class GameController implements Initializable {
 
     String tempWord = "temp";
     int  knowingLetterCount = 0;
+    int i = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         WordList.setWords();
+        Collections.shuffle(WordList.words);
     }
 
     @FXML
@@ -53,11 +52,18 @@ public class GameController implements Initializable {
 
     @FXML
     protected void onStartButtonClick() {
+        System.out.println(WordList.words);
         startButton.setText("next word");
-        tempWord = wordGenerator.generateWord();
+       // for (int i=0; i<WordList.words.size(); i++ ){}
+        tempWord = WordList.words.get(i);
+
+        //tempWord = wordGenerator.generateWord();
         label.setText("your word have " +  tempWord.length() + " letters");
         System.out.println(tempWord);
-
+        if (i+1 == WordList.words.size()){
+            i=0;
+        }
+        i++;
     }
 
 
