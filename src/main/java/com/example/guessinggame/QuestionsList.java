@@ -18,9 +18,9 @@ public class QuestionsList {
         animalQuestions.add(question1);
         animalQuestions.add(question2);
         animalQuestions.add(question3);
-        words.add(question1.getValue0());
-        words.add(question2.getValue0());
-        words.add(question3.getValue0());
+//        words.add(question1.getValue0());
+//        words.add(question2.getValue0());
+//        words.add(question3.getValue0());
 //        words.add("crocodile");
 //        words.add("bee");
       //  words.add("bear");
@@ -30,7 +30,7 @@ public class QuestionsList {
 
     public static String getHints(){
 
-        return ";";
+        return "";
     }
 
 }

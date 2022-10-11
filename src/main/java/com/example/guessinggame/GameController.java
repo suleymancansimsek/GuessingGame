@@ -19,7 +19,7 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         QuestionsList.setQuestions();
-        Collections.shuffle(QuestionsList.words);
+        Collections.shuffle(QuestionsList.animalQuestions);
     }
 
 
@@ -56,14 +56,14 @@ public class GameController implements Initializable {
     protected void onStartButtonClick() {
         System.out.println(QuestionsList.words);
         startButton.setText("next word");
-        hintLabel.setText("here is your hint");
+        hintLabel.setText(QuestionsList.animalQuestions.get(i).getValue1().toString());
        // for (int i=0; i<WordList.words.size(); i++ ){}
-        tempWord = QuestionsList.words.get(i);
+        tempWord = QuestionsList.animalQuestions.get(i).getValue0().toString();
 
         //tempWord = wordGenerator.generateWord();
         label.setText("your word have " +  tempWord.length() + " letters");
         System.out.println(tempWord);
-        if (i+1 == QuestionsList.words.size()){
+        if (i+1 == QuestionsList.animalQuestions.size()){
             i=0;
         }
         i++;
